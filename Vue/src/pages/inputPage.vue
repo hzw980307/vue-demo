@@ -6,7 +6,7 @@
   <!-- </div> -->
   <form novalidate v-submit="doSubmit">
     <div class="row">
-      <label>姓名={{personName}}=</label>
+      <label>姓名</label>
       <ep-input v-model="personName"></ep-input>
     </div>
     <div class="row">
@@ -29,11 +29,11 @@
 </template>
 <script>
 export default {
-  data(){
+  data() {
     return {
-      personName:"",
-      birthDate:"19491001"
-    }
+      personName: "",
+      birthDate: "19491001",
+    };
   },
   methods: {
     //表单提交方法
@@ -47,3 +47,33 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+form {
+  width: 300px;
+  padding: 10px 0;
+  div {
+    &.row {
+      & > label {
+        width: 6em;
+        display: inline-block;
+        text-align: right;
+      }
+      line-height: 1.5em;
+    }
+    &.btn-list {
+      text-align: center;
+      margin-top: 14px;
+      & > .btn {
+        padding: 3px 10px;
+        border-radius: 8px;
+        & > .btn-submit {
+          background-color: blue;
+        }
+        & > .btn-reset {
+          background-color:gray;
+        }
+      }
+    }
+  }
+}
+</style>
