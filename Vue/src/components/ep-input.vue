@@ -9,6 +9,7 @@ export default {
     //从引用组件的页面获取值
     props:['value'],
     methods:{
+        
         doit(){
             //将数据回写到页面去
             this.$emit('input',this.$refs.personName.value);

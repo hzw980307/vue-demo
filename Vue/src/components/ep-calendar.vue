@@ -1,7 +1,7 @@
 <template>
   <div class="calendar-root-view">
-    <input readonly ref="birthDate" type="text"  @input="doit()" />
-    <div ref="myCalendar" class="calendar-view">
+    <input readonly ref="birthDate" type="text"  @input="doit()"  isOpen='false'/>
+    <div ref="myCalendar" class="calendar-view" >
       <!-- 日历组件切换视图的地方 -->
     </div>
   </div>
@@ -231,6 +231,7 @@ export default {
       } else {
         // 打开
         this.selectDayView(this.selectYear, this.selectMonth);
+        this.isOpen=true;
       }
     });
   },
@@ -258,6 +259,7 @@ export default {
   background-color: rgb(223, 217, 222);
   line-height: 1.8em;
   text-align: center;
+  z-index: 1;
 }
 
 /* 头部 */

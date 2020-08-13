@@ -14,12 +14,12 @@
       <ep-calendar v-model="birthDate"></ep-calendar>
     </div>
     <div class="row">
-      <label>国籍</label>
-      <ep-select></ep-select>
+      <label>国籍{{country}}</label>
+      <ep-select v-model="country" :list="selectList.countrys"></ep-select>
     </div>
     <div class="row">
       <label>是否自贸区</label>
-      <ep-radio></ep-radio>
+      <ep-radio v-model="isFTZ"></ep-radio>
     </div>
     <div class="btn-list">
       <input type="button" @click="doReset()" value="重置" class="btn btn-reset" />
@@ -33,6 +33,21 @@ export default {
     return {
       personName: "",
       birthDate: "19491001",
+      country:"1",
+      isFTZ:null,
+      selectList:{
+        countrys:{
+          1:'中国',
+          2:'俄罗斯',
+          3:'美国',
+          4:'英国',
+          5:'法国',
+          6:'德国',
+          7:'日本',
+          8:'新加坡',
+        }
+      },
+      
     };
   },
   methods: {
